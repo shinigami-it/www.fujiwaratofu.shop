@@ -1,0 +1,246 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Fujiwara Tofu Shop',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    image={{ src: '~/assets/images/ae86_2.png', alt: 'AstroWind Hero Image' }}
+  >
+    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
+      Apply to FTS
+    </div>
+
+    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
+      APPLY TO THE TEAM
+    </div>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+  <Features
+    id="features"
+    tagline="Features"
+    title="What you get with Fujiwara Tofu Shop"
+    subtitle="Delivering tofu at lightning speed with unmatched precision and control. Built for those who conquer the mountain pass."
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Perfect Drift Control',
+        description: 'Execute precise drifts through tight corners with ease. Precision is the key to mastering the touge.',
+        icon: 'tabler:car',
+      },
+      {
+        title: 'Unmatched Speed and Agility',
+        description: 'From city streets to mountain passes, enjoy fast performance and unmatched control.',
+        icon: 'tabler:brand-speedtest',
+      },
+      {
+        title: 'Touge Mastery',
+        description: 'Inspired by legendary races, our design handles every curve with skill and precision.',
+        icon: 'tabler:route-alt-right',
+      },
+      {
+        title: 'FTS for the Win',
+        description: 'Stay ahead in search rankings, driving traffic and fueling success.',
+        icon: 'tabler:road',
+      },
+      {
+        title: 'Open to New Challenges',
+        description: 'Like fearless racers, we welcome new ideas to stay at the top of our game.',
+        icon: 'tabler:vs',
+      },{
+        title: 'Learn and Share Skills',
+        description: 'Teach and train team members with ease using our intuitive tools and resources.',
+        icon: 'tabler:chalkboard',
+      },
+      {
+        title: 'Own Servers',
+        description: 'We got our own racing servers for our team.',
+        icon: 'tabler:car-turbine',
+      },
+      {
+        title: 'Streaming Server Access',
+        description: 'Seamlessly stream your favorite series, movies, or media to your team or audience.',
+        icon: 'tabler:video',
+      },
+      {
+        title: 'Analytics for Excellence',
+        description: 'Gain insights and refine strategies with performance tracking and analytics.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+/>
+
+
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="The Drift King’s Legacy"
+    title="Fujiwara Tofu Shop: Speed Meets Precision"
+    items={[
+      {
+        title: 'Mastering the Mountain Passes',
+        description:
+          'Fueled by precision and speed, we conquer every hairpin and straight.',
+      },
+      {
+        title: 'Engineered for Control',
+        description:
+          'Our team isn’t just about speed—it’s about perfecting the drift.',
+      },
+      {
+        title: 'No Margin for Error',
+        description:
+          'Just like the touge, every corner counts. We only aim for perfection.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/ae86_3.png',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Drift into the Future</h3>
+      Precision and speed come together as we dominate the touge, one corner at a time.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How to join the team?"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Join the discord-server</span>',
+        description:
+          "Join our server to check out everything.",
+        icon: 'tabler:brand-discord',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Find the tickets channel</span>',
+        description:
+          "Find the tickets channel.",
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Create a ticket</span>',
+        description:
+          'Create a ticket with the necessary information. And a moderator will respond to you soon',
+        icon: 'tabler:ticket',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/ae86_4.png',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Explore the questions below to learn more about FTS and how you can join our drifting and racing community!"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why FTS?',
+        description:
+          "FTS is more than just a racing community. Inspired by the world of Initial D, we emphasize precision, discipline, and control on touge roads. Whether you're into drifting or grip racing, FTS offers a platform for racers to refine their skills, compete fiercely, and embrace the thrill of mountain passes. Join us if you're ready to elevate your racing experience!",
+      },
+      {
+        title: "What makes FTS different from other racing communities?",
+        description:
+          "At FTS, we are passionate about mountain pass racing. Our community is built around the ethos of the Fujiwara Tofu Shop—focused on excellence, control, and consistency. Whether you're drifting through tight corners or chasing the perfect lap time, FTS offers an environment for racers who value skill, technique, and camaraderie.",
+      },
+      {
+        title: 'What do I need to get started?',
+        description:
+          'To join FTS, you\'ll need the following: Assetto Corsa. A racing mindset. A few DLCs',
+      },
+      {
+        title: 'How do I install the FTS Mod Pack for Assetto Corsa?',
+        description:
+          "Download the FTS Mod Pack from our website or Discord-server. Or even easier: install them via the server.",
+      },
+      {
+        title: 'Can I race with my friends on FTS?',
+        description:
+          "Absolutely! FTS is a community-driven server, and racing with friends is at the heart of our experience. You can organize private races, join public sessions, or even host events to challenge other drivers. Teamwork and friendly competition are key to what makes FTS so exciting.",
+      },
+      {
+        title: 'How can I improve my skills on FTS?',
+        description:
+          "Our community is full of experienced drivers who are always ready to share tips and advice. Whether you want to improve your drifting skills or master circuit racing, there's a wealth of knowledge here. We recommend joining practice sessions, watching replays, and seeking feedback from fellow racers to refine your technique.",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Join the FTS Discord',
+        href: 'https://discord.gg/uY7NxaCKxb',
+        target: '_blank',
+        icon: 'tabler:brand-discord',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Interested?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Join the Fujiwara Tofu Shop community and push your limits!
+    </Fragment>
+  </CallToAction>
+
+  <!-- Other Widgets... -->
+
+  <div class="flex justify-center py-8">
+    <iframe
+      src="https://discord.com/widget?id=1132332567459278878&theme=dark"
+      width="800"
+      height="400"
+      style=" margin-top: -5vh; padding: 2vh;"
+      allowtransparency="true"
+      frameborder="0"
+      class="rounded-lg"
+    ></iframe>
+  </div>
+</Layout>

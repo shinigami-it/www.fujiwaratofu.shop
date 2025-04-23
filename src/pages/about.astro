@@ -1,0 +1,147 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About Us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About Us"
+    image={{
+      src: '~/assets/images/ae86_sakura.webp',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">
+      Fujiwara Tofu shop
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Fujiwara Tofu Shop is a team inspired by Bunta's mission to deliver tofu faster and more efficiently 
+      than any competitor, prioritizing precision, discipline, and control on the toughest touge, honing 
+      drifting and gripping skills to dominate mountain passes with speed, control, and consistency.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Statistics"
+    stats={[
+      { title: 'Discord Members', amount: '115' },
+      { title: 'Team Members', amount: '9' },
+      { title: 'Students', amount: '4' },
+    ]}
+  />
+
+  <Features3
+    id="features"
+    tagline="Features"
+    title="What you get with Fujiwara Tofu Shop"
+    subtitle="Delivering tofu at lightning speed with unmatched precision and control. Built for those who conquer the mountain pass."
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Perfect Drift Control',
+        description: 'Execute precise drifts through tight corners with ease. Precision is the key to mastering the touge.',
+        icon: 'tabler:car',
+      },
+      {
+        title: 'Unmatched Speed and Agility',
+        description: 'From city streets to mountain passes, enjoy fast performance and unmatched control.',
+        icon: 'tabler:brand-speedtest',
+      },
+      {
+        title: 'Touge Mastery',
+        description: 'Inspired by legendary races, our design handles every curve with skill and precision.',
+        icon: 'tabler:route-alt-right',
+      },
+      {
+        title: 'FTS for the Win',
+        description: 'Stay ahead in search rankings, driving traffic and fueling success.',
+        icon: 'tabler:road',
+      },
+      {
+        title: 'Open to New Challenges',
+        description: 'Like fearless racers, we welcome new ideas to stay at the top of our game.',
+        icon: 'tabler:vs',
+      },{
+        title: 'Learn and Share Skills',
+        description: 'Teach and train team members with ease using our intuitive tools and resources.',
+        icon: 'tabler:chalkboard',
+      },
+      {
+        title: 'Own Servers',
+        description: 'We got our own racing servers for our team.',
+        icon: 'tabler:car-turbine',
+      },
+      {
+        title: 'Streaming Server Access',
+        description: 'Seamlessly stream your favorite series, movies, or media to your team or audience.',
+        icon: 'tabler:video',
+      },
+      {
+        title: 'Analytics for Excellence',
+        description: 'Gain insights and refine strategies with performance tracking and analytics.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+/>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our Values"
+    subtitle="At Fujiwara Tofu Shop, we prioritize precision, discipline, and the spirit of touge racing. Every corner, every drift, and every delivery is a testament to our commitment."
+    items={[
+      {
+        title: 'Touge Excellence',
+        description:
+          'Every member of our team strives for perfection on the mountain pass. Speed, control, and precision are at the core of what we do.',
+      },
+      {
+        title: 'Continuous Growth',
+        description:
+          'Like every racer perfecting their technique, we embrace constant learning and improvement to stay ahead.',
+      },
+      {
+        title: 'Community and Camaraderie',
+        description:
+          'We believe in fostering a tight-knit community where racers share their passion, skills, and support for one another.',
+      },
+    ]}
+  />
+
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Technical Support"
+    tagline="Contact us"
+    columns={2}
+    items={[
+      {
+        title: 'Create a ticket',
+        description:
+          'Simply create a ticket on our discord-server for any help or questions.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Send us an email',
+        description:
+          'send us an email to: info@fujiwaratofu.shop',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+</Layout>

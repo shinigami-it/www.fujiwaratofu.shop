@@ -1,0 +1,171 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Fujiwara Tofu Shop',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    image={{ src: '~/assets/images/s15.png', alt: 'AstroWind Hero Image' }}
+  >
+    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
+      Fujiwara Tofu Shop
+    </div>
+
+    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
+      WE LIVE AND BREATHE MOTORSPORT
+    </div>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Stats
+    title="Funneled money:"
+    stats={[
+      { title: 'Tournaments', amount: '30€' },
+      { title: 'Server costs', amount: '40€' },
+      { title: 'for other teams', amount: '10€' },
+    ]}
+  />
+
+  <Features
+    id="features"
+    tagline="Donor Perks"
+    title="What you get for donations"
+    subtitle="Support us and unlock exclusive benefits while helping us conquer the mountain pass together."
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Streaming Server Access',
+        description: 'Seamlessly stream your favorite series, movies, or media to your team or audience.',
+        icon: 'tabler:video',
+      },
+      {
+        title: 'Exclusive Racing Server Slots',
+        description: 'Enjoy priority access to our racing servers for the ultimate competitive experience.',
+        icon: 'tabler:car-turbine',
+      },
+      {
+        title: 'Analytics Dashboard',
+        description: 'Access detailed performance insights and exclusive analytics tools.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Early Access Features',
+        description: 'Get early access to new features, updates, and beta testing opportunities.',
+        icon: 'tabler:access-point',
+      },
+      {
+        title: 'Community Recognition',
+        description: 'Earn special badges and recognition within our community.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Priority Support',
+        description: 'Get priority support to resolve issues or provide feedback swiftly.',
+        icon: 'tabler:help',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Learn how your donations support FTS and what you gain in return!"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why should I donate to FTS?',
+        description:
+          "Your donations help us keep our servers running, fund new features, and enhance the experience for the entire FTS community. By donating, you're ensuring the growth and sustainability of our racing family.",
+      },
+      {
+        title: "What benefits do I get for donating?",
+        description:
+          "With a minimum donation of 5€ monthly, you’ll unlock all perks, including streaming server access, priority slots on racing servers, and access to exclusive analytics tools. You’ll also receive a special donor role on Discord, recognizing your support.",
+      },
+      {
+        title: 'Can I choose how much to donate?',
+        description:
+          "Yes! Donations are fully customizable. You can contribute any amount from 0 to ∞, but perks are unlocked starting at a €5 monthly donation.",
+      },
+      {
+        title: 'How is my donation used?',
+        description:
+          "Your contribution directly supports server costs, development of new features, and maintaining a top-notch racing environment for everyone. Every euro makes a difference in keeping FTS thriving.",
+      },
+      {
+        title: 'How do I claim my donor benefits?',
+        description:
+          "Once you donate, please create a ticket with the email you used for donating.",
+      },
+      {
+        title: 'What happens if I stop donating?',
+        description:
+          "You’ll still remain a valued member of FTS, but donor-exclusive perks like priority server access, streaming features, and the Discord role will be revoked once your donation period ends.",
+      },
+      {
+        title: 'Can I donate anonymously?',
+        description:
+          "Yes! If you prefer, you can donate without sharing your identity. Just opt for the anonymous option during the donation process.",
+      },
+      {
+        title: 'Can I set up a recurring donation?',
+        description:
+          "Absolutely! You can opt for a recurring monthly donation to keep your perks active and continue supporting FTS effortlessly.",
+      },
+    ]}
+  />
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Donate to FTS',
+      href: 'https://www.paypal.com/donate?token=OxwO8iUq7GOwOfaAQBKTCD93I81uXx6qLe_QC9y9MEPlXGFh8w02yE1t7Zwya-2b2ujDHS8JlPVKxvDL',
+      target: '_blank',
+      icon: 'tabler:brand-paypal',  // Optional: Update with a PayPal icon if available
+    },
+  ]}
+>
+  <Fragment slot="title">
+    Interested?
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    Donate to FTS to receive a special role and access to VIP servers!
+  </Fragment>
+
+</CallToAction>
+
+
+  <!-- Other Widgets... -->
+
+  <form action="https://www.paypal.com/donate" method="post" target="_top" style="display: flex; justify-content: center; align-items: center; margin-bottom: 5vh;">
+    <input type="hidden" name="hosted_button_id" value="F6SFXNM6GN8QY" />
+    <input type="image" src="https://pics.paypal.com/00/s/OTU2NzY0NTYtNTE0Ni00ZDA3LWI0YWUtNmRkYTliNjYwOWNm/file.JPG" style="border-radius: 5px;" border="0" name="submit" title="Donate to FTS" alt="Donate with PayPal button" />
+    <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+  </form>
+
+</Layout>
