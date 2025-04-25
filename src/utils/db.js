@@ -28,8 +28,8 @@ export async function fetchCalendarEvents() {
     });
 
     return {
-      timeStart: formattedTimeStart + " GMT +1",
-      timeEnd: formattedTimeEnd + " GMT +1",
+      timeStart: formattedTimeStart + " GMT +2",
+      timeEnd: formattedTimeEnd + " GMT +2",
       date: formattedDate,
       title: row.title,
       description: row.description,

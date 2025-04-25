@@ -87,7 +87,7 @@ export default defineConfig({
       },
     },
     server: {
-      allowedHosts: ['www.fujiwaratofu.shop']
+      allowedHosts: ['www.fujiwaratofu.shop', 'fujiwaratofu.shop', 'www.yukisama.de', 'yukisama.de']
     },
   },
 });
