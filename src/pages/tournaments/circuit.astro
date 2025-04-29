@@ -1,211 +1,174 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Fujiwara Tofu Shop',
+  title: 'Circuit Racing - Fujiwara Tofu Shop',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    image={{ src: '~/assets/images/supra_mk4.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/gt3.png', alt: 'Circuit Racing Hero' }}
   >
-    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      Fujiwara Tofu Shop
+    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans);">
+      Circuit Racing
     </div>
 
-    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      WE LIVE AND BREATHE MOTORSPORT
+    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans);">
+      FTS goes full throttle on every straight
     </div>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
   <Note />
-
-  <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with Fujiwara Tofu Shop"
-    subtitle="Mastering the touge with speed, precision, and control. Built for those who dominate the road."
+    tagline="Key Advantages"
+    title="Push Limits on the Circuit"
+    subtitle="FTS brings competitive spirit, technical mastery, and motorsport passion to every lap."
     items={[
       {
-        title: 'Perfect Drift Control',
-        description:
-          'We don’t just go fast; we execute every drift with precision, sliding through tight corners with ease. Precision is the key to mastering the touge.',
-        icon: 'tabler:car',
+        title: 'F1-Level Precision',
+        description: 'Execute perfect laps with telemetry-like consistency, maximizing every apex and braking zone.',
+        icon: 'tabler:flag',
       },
       {
-        title: 'Unmatched Speed and Agility',
-        description:
-          'Whether you’re in the city or on the mountain pass, our design delivers lightning-fast performance and unmatched control in every turn.',
-        icon: 'tabler:brand-speedtest',
+        title: 'GT-Class Versatility',
+        description: 'Race in GT3, GT4, or LMP cars — each class offers a unique challenge and excitement.',
+        icon: 'tabler:car-suv',
       },
       {
-        title: 'Touge Mastery',
-        description:
-          'Inspired by the legendary mountain races, our template ensures secure, efficient, and seamless experiences that handle every curve with skill and precision.',
-        icon: 'tabler:route-alt-right',
+        title: 'Track Day Ready',
+        description: 'Join practice sessions and events that simulate real-world racing weekends.',
+        icon: 'tabler:calendar-event',
       },
       {
-        title: 'Turbocharged Performance',
-        description:
-          'Just like a finely-tuned engine, our template is built for maximum speed. Boost your site’s performance with exceptional page load times and responsiveness.',
-        icon: 'tabler:car-turbine',
+        title: 'Performance Optimization',
+        description: 'Get the best out of your setup. Learn tire management, fuel strategy, and more.',
+        icon: 'tabler:gauge',
       },
       {
-        title: 'FTS for the Win',
-        description:
-          'Just as a racer needs to read the road ahead, FTS ensures your site stays ahead in the search rankings, bringing traffic and visibility to fuel your success.',
-        icon: 'tabler:road',
+        title: 'Multiclass Events',
+        description: 'Share the track with multiple classes and experience the true essence of endurance racing.',
+        icon: 'tabler:layers-intersect',
       },
       {
-        title: 'Open to New Challenges',
-        description:
-          'Like the fearless drivers who push their limits, we welcome new ideas and contributions, ensuring that we evolve and stay at the top of our game.',
-        icon: 'tabler:vs',
+        title: 'Global Competitions',
+        description: 'Compete with racers from around the world on legendary circuits.',
+        icon: 'tabler:world',
       },
     ]}
   />
 
-
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
-    tagline="The Drift King’s Legacy"
-    title="Fujiwara Tofu Shop: Speed Meets Precision"
+    tagline="Circuit Culture"
+    title="Discipline, Focus, Glory"
     items={[
       {
-        title: 'Mastering the Mountain Passes',
-        description:
-          'Fueled by precision and speed, we conquer every hairpin and straight.',
+        title: 'Race with Purpose',
+        description: 'Every lap is a step toward mastery. Each tenth of a second counts.',
       },
       {
-        title: 'Engineered for Control',
-        description:
-          'Our team isn’t just about speed—it’s about perfecting the drift.',
+        title: 'Track Tested',
+        description: 'Our drivers embrace challenges of every circuit — from Monza to Suzuka.',
       },
       {
-        title: 'No Margin for Error',
-        description:
-          'Just like the touge, every corner counts. We only aim for perfection.',
+        title: 'All Classes Welcome',
+        description: 'F1, GT, LMP, touring, and more — find your favorite and take the grid.',
       },
     ]}
     image={{
-      src: '~/assets/images/porsche.png',
-      alt: 'Colorful Image',
+      src: '~/assets/images/dtm.png',
+      alt: 'Circuit Racing Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Drift into the Future</h3>
-      Precision and speed come together as we dominate the touge, one corner at a time.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">One Track, Many Stories</h3>
+      FTS welcomes every class, every racer, and every ambition — if it's on a circuit, it's on.
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-slate-100 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
-    title="How to Join Tournaments?"
+    title="How to Join Circuit Races?"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Join the Discord Server</span>',
-        description:
-          'Join our server to get all the details on upcoming tournaments, race formats, and prize pools. It’s the hub for everything!',
+        title: 'Step 1: <span class="font-medium">Join Discord</span>',
+        description: 'The Discord is your entry to schedules, practice servers, and live races.',
         icon: 'tabler:brand-discord',
       },
       {
-        title: 'Step 2: <span class="font-medium">Find the Tickets Channel</span>',
-        description:
-          'Look for the dedicated tickets channel in our Discord. This is where you can register for the tournaments and stay updated.',
-        icon: 'tabler:speakerphone',
+        title: 'Step 2: <span class="font-medium">Select Your Class</span>',
+        description: 'Choose between F1, GT3, LMP2, and others in dedicated signup channels.',
+        icon: 'tabler:select',
       },
       {
-        title: 'Step 3: <span class="font-medium">Create a Ticket</span>',
-        description:
-          'Submit a ticket with the required personal information to join the tournament. Our moderators will add you to the race once everything is confirmed.',
-        icon: 'tabler:ticket',
+        title: 'Step 3: <span class="font-medium">Join a Server</span>',
+        description: 'Practice or qualify — all servers are listed and easy to access.',
+        icon: 'tabler:server',
       },
       {
-        title: 'Ready!',
-        description: 'Once you’ve been added, get ready to race and compete for glory and cash prizes!',
-        icon: 'tabler:check',
+        title: 'Race Day',
+        description: 'Log in and put your skills to the test in official timed events.',
+        icon: 'tabler:steering-wheel',
       },
     ]}
     image={{
-      src: '~/assets/images/supra_mk5.png',
+      src: '~/assets/images/f1.png',
       alt: 'Steps image',
     }}
   />
 
-  <!-- FAQs Widget ******************* -->
-
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Explore the questions below to learn more about FTS and how you can join our drifting and racing community!"
+    title="FAQs - Circuit Division"
+    subtitle="All you need to know to start circuit racing with FTS"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why FTS?',
-        description:
-          "FTS is more than just a racing community. Inspired by the world of Initial D, we emphasize precision, discipline, and control on touge roads. Whether you're into drifting or grip racing, FTS offers a platform for racers to refine their skills, compete fiercely, and embrace the thrill of mountain passes. Join us if you're ready to elevate your racing experience!",
+        title: 'What cars can I race in FTS circuit events?',
+        description: 'We support a variety of classes: Formula cars, GT3/GT4, LMP1/2, and more.',
       },
       {
-        title: "What makes FTS different from other racing communities?",
-        description:
-          "At FTS, we are passionate about mountain pass racing. Our community is built around the ethos of the Fujiwara Tofu Shop—focused on excellence, control, and consistency. Whether you're drifting through tight corners or chasing the perfect lap time, FTS offers an environment for racers who value skill, technique, and camaraderie.",
+        title: 'Are there prizes?',
+        description: 'Many races include cash pools or partner-sponsored gear. Top drivers get featured.',
       },
       {
-        title: 'What do I need to get started?',
-        description:
-          'To join FTS, you\'ll need the following: Assetto Corsa. A racing mindset. A few DLCs',
+        title: 'Do I need a specific mod pack?',
+        description: 'Yes. Join Discord to get the latest mod pack and ensure compatibility.',
       },
       {
-        title: 'How do I install the FTS Mod Pack for Assetto Corsa?',
-        description:
-          "Download the FTS Mod Pack from our website or Discord-server. Or even easier: install them via the server.",
+        title: 'What if I’m new to sim racing?',
+        description: 'FTS has a friendly community that helps beginners. We offer practice sessions and setup tips.',
       },
       {
-        title: 'Can I race with my friends on FTS?',
-        description:
-          "Absolutely! FTS is a community-driven server, and racing with friends is at the heart of our experience. You can organize private races, join public sessions, or even host events to challenge other drivers. Teamwork and friendly competition are key to what makes FTS so exciting.",
+        title: 'Which simulator is used?',
+        description: 'All events are run on Assetto Corsa (CSP recommended).',
       },
       {
-        title: 'How can I improve my skills on FTS?',
-        description:
-          "Our community is full of experienced drivers who are always ready to share tips and advice. Whether you want to improve your drifting skills or master circuit racing, there's a wealth of knowledge here. We recommend joining practice sessions, watching replays, and seeking feedback from fellow racers to refine your technique.",
+        title: 'Can I race multiclass events?',
+        description: 'Absolutely. We run multiclass endurance and sprint events regularly.',
       },
     ]}
   />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Join the FTS Discord',
+        text: 'Join FTS Circuit League',
         href: 'https://discord.gg/uY7NxaCKxb',
         target: '_blank',
         icon: 'tabler:brand-discord',
@@ -213,22 +176,20 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Interested?
+      Time to hit the track
     </Fragment>
 
     <Fragment slot="subtitle">
-      Join the Fujiwara Tofu Shop community and push your limits!
+      Join FTS today and start your path to the podium
     </Fragment>
   </CallToAction>
-
-  <!-- Other Widgets... -->
 
   <div class="flex justify-center py-8">
     <iframe
       src="https://discord.com/widget?id=1132332567459278878&theme=dark"
       width="800"
       height="400"
-      style=" margin-top: -5vh; padding: 2vh;"
+      style="margin-top: -5vh; padding: 2vh;"
       allowtransparency="true"
       frameborder="0"
       class="rounded-lg"
