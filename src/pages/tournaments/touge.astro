@@ -1,211 +1,174 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Fujiwara Tofu Shop',
+  title: 'Touge Racing - Fujiwara Tofu Shop',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    image={{ src: '~/assets/images/supra_mk4.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/ae86_real.png', alt: 'Touge Racing Hero' }}
   >
-    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      Fujiwara Tofu Shop
+    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700; font-family: var(--aw-font-sans);">
+      Touge Racing
     </div>
 
-    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      WE LIVE AND BREATHE MOTORSPORT
+    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans);">
+      Master the Mountain Pass, Deliver the Tofu Safely
     </div>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
   <Note />
-
-  <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with Fujiwara Tofu Shop"
-    subtitle="Mastering the touge with speed, precision, and control. Built for those who dominate the road."
+    tagline="Key Highlights"
+    title="Own the Touge"
+    subtitle="Race through Japan's iconic mountain passes, perfect your cornering, and become the king of the hill. FTS offers authentic touge battles for skilled drivers."
     items={[
       {
-        title: 'Perfect Drift Control',
-        description:
-          'We don’t just go fast; we execute every drift with precision, sliding through tight corners with ease. Precision is the key to mastering the touge.',
-        icon: 'tabler:car',
+        title: 'Iconic Passes',
+        description: 'Race on legendary roads like Akina, Akagi, Tsukuba, Haruna, and the mysterious Fruits Line.',
+        icon: 'tabler:mountain',
       },
       {
-        title: 'Unmatched Speed and Agility',
-        description:
-          'Whether you’re in the city or on the mountain pass, our design delivers lightning-fast performance and unmatched control in every turn.',
-        icon: 'tabler:brand-speedtest',
+        title: 'Precision Driving',
+        description: 'Hone your downhill braking, weight transfer, and throttle control in technical touge corners.',
+        icon: 'tabler:steering-wheel',
       },
       {
-        title: 'Touge Mastery',
-        description:
-          'Inspired by the legendary mountain races, our template ensures secure, efficient, and seamless experiences that handle every curve with skill and precision.',
-        icon: 'tabler:route-alt-right',
+        title: 'Realistic Night Runs',
+        description: 'Experience late-night runs with headlights, fog, and risk. Just you, the car, and the road.',
+        icon: 'tabler:moon-stars',
       },
       {
-        title: 'Turbocharged Performance',
-        description:
-          'Just like a finely-tuned engine, our template is built for maximum speed. Boost your site’s performance with exceptional page load times and responsiveness.',
-        icon: 'tabler:car-turbine',
+        title: 'Initial D Spirit',
+        description: 'Feel the spirit of street racing. No flashy body kits—just skill, balance, and tofu in the trunk.',
+        icon: 'tabler:flag',
       },
       {
-        title: 'FTS for the Win',
-        description:
-          'Just as a racer needs to read the road ahead, FTS ensures your site stays ahead in the search rankings, bringing traffic and visibility to fuel your success.',
-        icon: 'tabler:road',
+        title: 'Leaderboard Battles',
+        description: 'Compete for the fastest times and battle others in real-time or time attack mode.',
+        icon: 'tabler:trophy',
       },
       {
-        title: 'Open to New Challenges',
-        description:
-          'Like the fearless drivers who push their limits, we welcome new ideas and contributions, ensuring that we evolve and stay at the top of our game.',
-        icon: 'tabler:vs',
+        title: 'Driver Development',
+        description: 'Improve your skills with drift clinics, grip sessions, and mentor-driven training events.',
+        icon: 'tabler:school',
       },
     ]}
   />
-
-
-  <!-- Content Widget **************** -->
 
   <Content
     isReversed
-    tagline="The Drift King’s Legacy"
-    title="Fujiwara Tofu Shop: Speed Meets Precision"
+    tagline="Drift, Grip, Dominate"
+    title="Live the Touge Life"
     items={[
       {
-        title: 'Mastering the Mountain Passes',
-        description:
-          'Fueled by precision and speed, we conquer every hairpin and straight.',
+        title: 'Stock Builds Only',
+        description: 'We encourage balanced, realistic builds—no maxed-out tuning. Stock AE86? You’re welcome.',
       },
       {
-        title: 'Engineered for Control',
-        description:
-          'Our team isn’t just about speed—it’s about perfecting the drift.',
+        title: 'Legendary Rivalries',
+        description: 'Battle other drivers like it’s a manga scene. Uphill or downhill, your skills decide the outcome.',
       },
       {
-        title: 'No Margin for Error',
-        description:
-          'Just like the touge, every corner counts. We only aim for perfection.',
+        title: 'Safe & Clean Racing',
+        description: 'No crashing, no bumping. Our tofu must arrive intact—clean lines, clean passes.',
       },
     ]}
     image={{
-      src: '~/assets/images/porsche.png',
-      alt: 'Colorful Image',
+      src: '~/assets/images/mitsubishi.png',
+      alt: 'Touge Car Battle',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Drift into the Future</h3>
-      Precision and speed come together as we dominate the touge, one corner at a time.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Touge: The Art of the Mountain</h3>
+      Race through tight switchbacks and hairpins. On the touge, it's not about power—it's about control, commitment, and precision. Deliver it safe, deliver it fast.
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-slate-100 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
-    title="How to Join Tournaments?"
+    title="How to Join Touge Events?"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Join the Discord Server</span>',
-        description:
-          'Join our server to get all the details on upcoming tournaments, race formats, and prize pools. It’s the hub for everything!',
+        title: 'Step 1: <span class="font-medium">Join Discord</span>',
+        description: 'All touge event schedules, run groups, and rival matches are organized through Discord.',
         icon: 'tabler:brand-discord',
       },
       {
-        title: 'Step 2: <span class="font-medium">Find the Tickets Channel</span>',
-        description:
-          'Look for the dedicated tickets channel in our Discord. This is where you can register for the tournaments and stay updated.',
-        icon: 'tabler:speakerphone',
+        title: 'Step 2: <span class="font-medium">Choose Your Pass</span>',
+        description: 'Select your route—Akina for tight hairpins, Tsukuba for technical grip, Akagi for high-speed corners.',
+        icon: 'tabler:map',
       },
       {
-        title: 'Step 3: <span class="font-medium">Create a Ticket</span>',
-        description:
-          'Submit a ticket with the required personal information to join the tournament. Our moderators will add you to the race once everything is confirmed.',
-        icon: 'tabler:ticket',
+        title: 'Step 3: <span class="font-medium">Set Your Car</span>',
+        description: 'Pick a reliable touge car and configure it for either drift or grip—depending on your style.',
+        icon: 'tabler:manual-gearbox',
       },
       {
-        title: 'Ready!',
-        description: 'Once you’ve been added, get ready to race and compete for glory and cash prizes!',
-        icon: 'tabler:check',
+        title: 'Step 4: Race with Respect',
+        description: 'Follow touge etiquette. Run clean, push your limits, and never damage the tofu.',
+        icon: 'tabler:steering-wheel',
       },
     ]}
     image={{
-      src: '~/assets/images/supra_mk5.png',
-      alt: 'Steps image',
+      src: '~/assets/images/ae86_8.png',
+      alt: 'Touge Event Route Image',
     }}
   />
 
-  <!-- FAQs Widget ******************* -->
-
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Explore the questions below to learn more about FTS and how you can join our drifting and racing community!"
+    title="FAQs - Touge Division"
+    subtitle="All about FTS touge racing"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why FTS?',
-        description:
-          "FTS is more than just a racing community. Inspired by the world of Initial D, we emphasize precision, discipline, and control on touge roads. Whether you're into drifting or grip racing, FTS offers a platform for racers to refine their skills, compete fiercely, and embrace the thrill of mountain passes. Join us if you're ready to elevate your racing experience!",
+        title: 'What makes touge racing different?',
+        description: 'Touge racing is raw and personal. It’s about narrow mountain passes, real cars, and pure technique—no circuit, no safety net.',
       },
       {
-        title: "What makes FTS different from other racing communities?",
-        description:
-          "At FTS, we are passionate about mountain pass racing. Our community is built around the ethos of the Fujiwara Tofu Shop—focused on excellence, control, and consistency. Whether you're drifting through tight corners or chasing the perfect lap time, FTS offers an environment for racers who value skill, technique, and camaraderie.",
+        title: 'Can I drift in touge events?',
+        description: 'Absolutely. Grip or drift is up to you—just keep it safe and respect the course.',
       },
       {
-        title: 'What do I need to get started?',
-        description:
-          'To join FTS, you\'ll need the following: Assetto Corsa. A racing mindset. A few DLCs',
+        title: 'Do I need a powerful car?',
+        description: 'Not at all. Touge is about handling, not horsepower. A well-driven AE86 can beat a skyline any day.',
       },
       {
-        title: 'How do I install the FTS Mod Pack for Assetto Corsa?',
-        description:
-          "Download the FTS Mod Pack from our website or Discord-server. Or even easier: install them via the server.",
+        title: 'Do you allow tandem battles?',
+        description: 'Yes. If both drivers agree, tandem touge battles are encouraged. Uphill or downhill—it’s your call.',
       },
       {
-        title: 'Can I race with my friends on FTS?',
-        description:
-          "Absolutely! FTS is a community-driven server, and racing with friends is at the heart of our experience. You can organize private races, join public sessions, or even host events to challenge other drivers. Teamwork and friendly competition are key to what makes FTS so exciting.",
+        title: 'Are night runs supported?',
+        description: 'Yes. Many events happen at night for realism. Keep your lights on and stay sharp.',
       },
       {
-        title: 'How can I improve my skills on FTS?',
-        description:
-          "Our community is full of experienced drivers who are always ready to share tips and advice. Whether you want to improve your drifting skills or master circuit racing, there's a wealth of knowledge here. We recommend joining practice sessions, watching replays, and seeking feedback from fellow racers to refine your technique.",
+        title: 'How do I get faster?',
+        description: 'Practice, watch replays, and learn from faster drivers in the community. It’s all about refinement.',
       },
     ]}
   />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Join the FTS Discord',
+        text: 'Join the Touge Legends',
         href: 'https://discord.gg/uY7NxaCKxb',
         target: '_blank',
         icon: 'tabler:brand-discord',
@@ -213,22 +176,20 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Interested?
+      Ready to Take on the Mountain?
     </Fragment>
 
     <Fragment slot="subtitle">
-      Join the Fujiwara Tofu Shop community and push your limits!
+      Join FTS Touge Division now. Race, drift, and carve your name into the asphalt of Japan’s greatest passes.
     </Fragment>
   </CallToAction>
-
-  <!-- Other Widgets... -->
 
   <div class="flex justify-center py-8">
     <iframe
       src="https://discord.com/widget?id=1132332567459278878&theme=dark"
       width="800"
       height="400"
-      style=" margin-top: -5vh; padding: 2vh;"
+      style="margin-top: -5vh; padding: 2vh;"
       allowtransparency="true"
       frameborder="0"
       class="rounded-lg"

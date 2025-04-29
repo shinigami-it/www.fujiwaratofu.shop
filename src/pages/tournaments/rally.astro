@@ -1,211 +1,175 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Fujiwara Tofu Shop',
+  title: 'Rally Racing - Fujiwara Tofu Shop',
   ignoreTitleTemplate: true,
 };
+
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
-    image={{ src: '~/assets/images/supra_mk4.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/wrc_impreza.png', alt: 'Rally Racing Hero' }}
   >
-    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700;font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      Fujiwara Tofu Shop
+    <div slot="subtitle" style="margin-top: 5vh; margin-bottom: 5vh; font-size: 3.75rem; font-weight: 700; font-family: var(--aw-font-sans);">
+      Rally Racing
     </div>
 
-    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";">
-      WE LIVE AND BREATHE MOTORSPORT
+    <div slot="subtitle" style="margin-top: 10vh; margin-bottom: 5vh; font-size: 1.25rem; line-height: 1.75rem; font-family: var(--aw-font-sans);">
+      Conquer the Off-Road, Master the Stages
     </div>
   </Hero>
 
-  <!-- Note Widget ******************* -->
-
   <Note />
-
-  <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with Fujiwara Tofu Shop"
-    subtitle="Mastering the touge with speed, precision, and control. Built for those who dominate the road."
+    tagline="Key Advantages"
+    title="Tackle the Rally Stages"
+    subtitle="From WRC-style races to legendary rally stages, FTS offers thrilling rally racing experiences that push you to your limits."
     items={[
       {
-        title: 'Perfect Drift Control',
-        description:
-          'We don’t just go fast; we execute every drift with precision, sliding through tight corners with ease. Precision is the key to mastering the touge.',
+        title: 'Rally Classes',
+        description: 'Join events featuring WRC-style rally stages, from the iconic Group B monsters to modern-day machines.',
         icon: 'tabler:car',
       },
       {
-        title: 'Unmatched Speed and Agility',
-        description:
-          'Whether you’re in the city or on the mountain pass, our design delivers lightning-fast performance and unmatched control in every turn.',
-        icon: 'tabler:brand-speedtest',
+        title: 'Tough Rally Challenges',
+        description: 'Rally racing demands precision in handling, tire management, and navigating challenging terrains.',
+        icon: 'tabler:mountain',
       },
       {
-        title: 'Touge Mastery',
-        description:
-          'Inspired by the legendary mountain races, our template ensures secure, efficient, and seamless experiences that handle every curve with skill and precision.',
-        icon: 'tabler:route-alt-right',
-      },
-      {
-        title: 'Turbocharged Performance',
-        description:
-          'Just like a finely-tuned engine, our template is built for maximum speed. Boost your site’s performance with exceptional page load times and responsiveness.',
-        icon: 'tabler:car-turbine',
-      },
-      {
-        title: 'FTS for the Win',
-        description:
-          'Just as a racer needs to read the road ahead, FTS ensures your site stays ahead in the search rankings, bringing traffic and visibility to fuel your success.',
+        title: 'Iconic Rally Stages',
+        description: 'Race through legendary rally stages like Finland’s gravel roads, Monaco’s tarmac, and more.',
         icon: 'tabler:road',
       },
       {
-        title: 'Open to New Challenges',
-        description:
-          'Like the fearless drivers who push their limits, we welcome new ideas and contributions, ensuring that we evolve and stay at the top of our game.',
-        icon: 'tabler:vs',
+        title: 'Real-Time Strategy',
+        description: 'Adjust your strategies on the fly with pace notes, tire selection, and weather changes in real-time.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Car Customization',
+        description: 'Choose from a variety of rally cars, customize them for specific conditions, and tune them for maximum performance.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Global Rally Community',
+        description: 'Join a global network of rally enthusiasts, from weekend warriors to seasoned rally drivers.',
+        icon: 'tabler:world',
       },
     ]}
   />
-
-
-  <!-- Content Widget **************** -->
 
   <Content
     isReversed
-    tagline="The Drift King’s Legacy"
-    title="Fujiwara Tofu Shop: Speed Meets Precision"
+    tagline="Race Through the Stages"
+    title="Unleash Your Inner Rally Driver"
     items={[
       {
-        title: 'Mastering the Mountain Passes',
-        description:
-          'Fueled by precision and speed, we conquer every hairpin and straight.',
+        title: 'Rally Car Selection',
+        description: 'Choose your rally car, from the iconic Subaru Impreza to the Ford Fiesta RS. Tailor your vehicle for every condition.',
       },
       {
-        title: 'Engineered for Control',
-        description:
-          'Our team isn’t just about speed—it’s about perfecting the drift.',
+        title: 'Iconic Rally Events',
+        description: 'Participate in legendary rally events like Rally Finland, Monte Carlo, and more, across different terrain types.',
       },
       {
-        title: 'No Margin for Error',
-        description:
-          'Just like the touge, every corner counts. We only aim for perfection.',
+        title: 'Dynamic Weather & Terrain',
+        description: 'Experience ever-changing weather and terrain, challenging you to adapt and make split-second decisions.',
       },
     ]}
     image={{
-      src: '~/assets/images/porsche.png',
-      alt: 'Colorful Image',
+      src: '~/assets/images/wrc_toyota.png',
+      alt: 'Rally Car on Stage',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Drift into the Future</h3>
-      Precision and speed come together as we dominate the touge, one corner at a time.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Rally: Precision in Every Corner</h3>
+      FTS brings the thrill of rally racing, where every stage tests your car control and adaptability to changing conditions.
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-slate-100 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
-    title="How to Join Tournaments?"
+    title="How to Join Rally Events?"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Join the Discord Server</span>',
-        description:
-          'Join our server to get all the details on upcoming tournaments, race formats, and prize pools. It’s the hub for everything!',
+        title: 'Step 1: <span class="font-medium">Join Discord</span>',
+        description: 'Get access to all rally events, real-time pace notes, and strategy discussions on our Discord server.',
         icon: 'tabler:brand-discord',
       },
       {
-        title: 'Step 2: <span class="font-medium">Find the Tickets Channel</span>',
-        description:
-          'Look for the dedicated tickets channel in our Discord. This is where you can register for the tournaments and stay updated.',
-        icon: 'tabler:speakerphone',
+        title: 'Step 2: <span class="font-medium">Pick Your Car</span>',
+        description: 'Choose from a variety of rally cars, from classic machines to modern-day WRC challengers.',
+        icon: 'tabler:manual-gearbox',
       },
       {
-        title: 'Step 3: <span class="font-medium">Create a Ticket</span>',
-        description:
-          'Submit a ticket with the required personal information to join the tournament. Our moderators will add you to the race once everything is confirmed.',
-        icon: 'tabler:ticket',
+        title: 'Step 3: <span class="font-medium">Study the Stages</span>',
+        description: 'Familiarize yourself with the rally stages and understand the weather conditions to prepare for every challenge.',
+        icon: 'tabler:map',
       },
       {
-        title: 'Ready!',
-        description: 'Once you’ve been added, get ready to race and compete for glory and cash prizes!',
-        icon: 'tabler:check',
+        title: 'Step 4: Race and Conquer',
+        description: 'Race through difficult rally stages, battling time, terrain, and weather. Every second counts.',
+        icon: 'tabler:steering-wheel',
       },
     ]}
     image={{
-      src: '~/assets/images/supra_mk5.png',
-      alt: 'Steps image',
+      src: '~/assets/images/wrc_mitsubishi.png',
+      alt: 'Rally Event Steps Image',
     }}
   />
 
-  <!-- FAQs Widget ******************* -->
-
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Explore the questions below to learn more about FTS and how you can join our drifting and racing community!"
+    title="FAQs - Rally Racing Division"
+    subtitle="Everything you need to know about rally racing"
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why FTS?',
-        description:
-          "FTS is more than just a racing community. Inspired by the world of Initial D, we emphasize precision, discipline, and control on touge roads. Whether you're into drifting or grip racing, FTS offers a platform for racers to refine their skills, compete fiercely, and embrace the thrill of mountain passes. Join us if you're ready to elevate your racing experience!",
+        title: 'What rally events do you offer?',
+        description: 'We offer a range of rally events, from WRC-style races to custom rally stages on various terrains.',
       },
       {
-        title: "What makes FTS different from other racing communities?",
-        description:
-          "At FTS, we are passionate about mountain pass racing. Our community is built around the ethos of the Fujiwara Tofu Shop—focused on excellence, control, and consistency. Whether you're drifting through tight corners or chasing the perfect lap time, FTS offers an environment for racers who value skill, technique, and camaraderie.",
+        title: 'Can I race in multiple cars?',
+        description: 'Yes, you can participate in multiple events with different cars, but each rally car is suited for specific conditions.',
       },
       {
-        title: 'What do I need to get started?',
-        description:
-          'To join FTS, you\'ll need the following: Assetto Corsa. A racing mindset. A few DLCs',
+        title: 'How do I prepare for a rally stage?',
+        description: 'Study the course map, prepare pace notes, and select tires that suit the weather and terrain conditions.',
       },
       {
-        title: 'How do I install the FTS Mod Pack for Assetto Corsa?',
-        description:
-          "Download the FTS Mod Pack from our website or Discord-server. Or even easier: install them via the server.",
+        title: 'What makes rally racing different from other racing formats?',
+        description: 'Rally racing is unique because it takes place on public roads with closed-off sections. Drivers must navigate through unpredictable weather, terrains, and tight corners.',
       },
       {
-        title: 'Can I race with my friends on FTS?',
-        description:
-          "Absolutely! FTS is a community-driven server, and racing with friends is at the heart of our experience. You can organize private races, join public sessions, or even host events to challenge other drivers. Teamwork and friendly competition are key to what makes FTS so exciting.",
+        title: 'Is there a prize for top rally drivers?',
+        description: 'Yes! Top finishers in our rally races can win prizes such as custom rally gear, sponsorships, and recognition in the community.',
       },
       {
-        title: 'How can I improve my skills on FTS?',
-        description:
-          "Our community is full of experienced drivers who are always ready to share tips and advice. Whether you want to improve your drifting skills or master circuit racing, there's a wealth of knowledge here. We recommend joining practice sessions, watching replays, and seeking feedback from fellow racers to refine your technique.",
+        title: 'Can I race solo or in a team?',
+        description: 'You can race solo or join a team for a more strategic approach, especially for events with multiple stages or longer formats.',
       },
     ]}
   />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Join the FTS Discord',
+        text: 'Join FTS Rally League',
         href: 'https://discord.gg/uY7NxaCKxb',
         target: '_blank',
         icon: 'tabler:brand-discord',
@@ -213,22 +177,20 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Interested?
+      Ready to Race?
     </Fragment>
 
     <Fragment slot="subtitle">
-      Join the Fujiwara Tofu Shop community and push your limits!
+      Join FTS today and compete in some of the most exciting rally events, testing your skill on iconic rally stages around the world.
     </Fragment>
   </CallToAction>
-
-  <!-- Other Widgets... -->
 
   <div class="flex justify-center py-8">
     <iframe
       src="https://discord.com/widget?id=1132332567459278878&theme=dark"
       width="800"
       height="400"
-      style=" margin-top: -5vh; padding: 2vh;"
+      style="margin-top: -5vh; padding: 2vh;"
       allowtransparency="true"
       frameborder="0"
       class="rounded-lg"
