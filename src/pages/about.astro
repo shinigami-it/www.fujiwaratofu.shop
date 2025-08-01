@@ -10,6 +10,23 @@ const metadata = {
   title: 'About Us - Fujiwara Tofu Shop',
   ignoreTitleTemplate: true,
 };
+
+const GUILD_ID = '1132332567459278878';
+const TEAM_ROLE_ID = '1287721449057947669';
+const TEAM_TRIAL_ROLE_ID = '1290079131807256616';
+const STUDENT_ROLE_ID = '1302265783321100452';
+
+async function fetchMemberCount(url) {
+	const res = await fetch(url);
+	if (!res.ok) return 'N/A';
+	const data = await res.json();
+	return data.members;
+}
+
+const discordMembers = await fetchMemberCount(`http://localhost:3000/discord/members/${GUILD_ID}`);
+const teamMembers = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${TEAM_ROLE_ID}`);
+const teamTrialMembers = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${TEAM_TRIAL_ROLE_ID}`);
+const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${STUDENT_ROLE_ID}`);
 ---
 
 <Layout metadata={metadata}>
@@ -38,9 +55,9 @@ const metadata = {
   <Stats
     title="Statistics"
     stats={[
-      { title: 'Discord Members', amount: '115' },
-      { title: 'Team Members', amount: '9' },
-      { title: 'Students', amount: '4' },
+      { title: 'Discord Members', amount: discordMembers || '200' },
+      { title: 'Team Members', amount: (Number(teamMembers) + Number(teamTrialMembers)) || '20' },
+      { title: 'Students', amount: students || '10' },
     ]}
   />
 
@@ -140,7 +157,7 @@ const metadata = {
       {
         title: 'Send us an email',
         description:
-          'send us an email to: info@fujiwaratofu.shop',
+          'send us an email to: contact@fujiwaratofu.shop',
         icon: 'tabler:mail',
       },
     ]}

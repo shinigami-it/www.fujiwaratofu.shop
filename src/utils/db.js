@@ -1,7 +1,8 @@
-import mysql from 'mysql2/promise';
-import dotenv from 'dotenv';
+import mysql from 'mysql2/promise'
+import dotenv from 'dotenv'
+import { DateTime } from 'luxon'
 
-dotenv.config();
+dotenv.config()
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -9,30 +10,37 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-});
+})
+
+function formatTime(dateStr, timeStr) {
+  if (!timeStr) return null
+  const dt = DateTime.fromISO(`${dateStr}T${timeStr.trim()}`, { zone: 'Europe/Berlin' })
+  if (!dt.isValid) return null
+  return dt.toFormat('HH:mm ZZZZ')
+}
 
 export async function fetchCalendarEvents() {
-  const query = `SELECT timeStart, timeEnd, date, title, description FROM calendar`;
-  const [rows] = await pool.query(query);
+  const query = `SELECT timeStart, timeEnd, date, title, description FROM calendar`
+  const [rows] = await pool.query(query)
 
-  console.log(rows);
+  const now = DateTime.now().setZone('Europe/Berlin')
 
-  return rows.map((row) => {
-    const formattedTimeStart = row.timeStart ? row.timeStart : 'Invalid Time';
-    const formattedTimeEnd = row.timeEnd ? row.timeEnd : null;
+  const futureEvents = rows.filter(row => {
+    if (!row.timeStart) return false
+    const dateISO = row.date instanceof Date ? row.date.toISOString().substring(0, 10) : row.date
+    const eventDateTime = DateTime.fromISO(`${dateISO}T${row.timeStart.trim()}`, { zone: 'Europe/Berlin' })
+    if (!eventDateTime.isValid) return false
+    return eventDateTime >= now
+  })
 
-    const formattedDate = new Date(row.date).toLocaleDateString('de-DE', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
-
+  return futureEvents.map(row => {
+    const dateISO = row.date instanceof Date ? row.date.toISOString().substring(0, 10) : row.date
     return {
-      timeStart: formattedTimeStart + " GMT +2",
-      timeEnd: formattedTimeEnd + " GMT +2",
-      date: formattedDate,
+      timeStart: formatTime(dateISO, row.timeStart),
+      timeEnd: formatTime(dateISO, row.timeEnd),
+      date: DateTime.fromISO(dateISO, { zone: 'Europe/Berlin' }).toFormat('dd.MM.yyyy'),
       title: row.title,
       description: row.description,
-    };
-  });
+    }
+  })
 }

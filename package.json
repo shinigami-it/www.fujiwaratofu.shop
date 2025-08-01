@@ -22,6 +22,7 @@
     "fix:prettier": "prettier -w ."
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
     "@astrolib/analytics": "^0.6.1",
@@ -34,7 +35,11 @@
     "dotenv": "^16.4.7",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "luxon": "^3.7.1",
+    "mdx": "^0.3.1",
     "mysql2": "^3.12.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "unpic": "^3.22.0"
   },
   "devDependencies": {
