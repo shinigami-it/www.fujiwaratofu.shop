@@ -6,10 +6,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-const dotenv = require('dotenv');
-dotenv.config();
-
-const port = process.env.API_PORT;
+const port = import.meta.env.API_PORT;
 
 const metadata = {
   title: 'About Us - Fujiwara Tofu Shop',
