@@ -6,6 +6,11 @@ import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+const dotenv = require('dotenv');
+dotenv.config();
+
+const port = process.env.API_PORT;
+
 const metadata = {
   title: 'About Us - Fujiwara Tofu Shop',
   ignoreTitleTemplate: true,
@@ -17,16 +22,16 @@ const TEAM_TRIAL_ROLE_ID = '1290079131807256616';
 const STUDENT_ROLE_ID = '1302265783321100452';
 
 async function fetchMemberCount(url) {
-	const res = await fetch(url);
-	if (!res.ok) return 'N/A';
-	const data = await res.json();
-	return data.members;
+  const res = await fetch(url);
+  if (!res.ok) return 'N/A';
+  const data = await res.json();
+  return data.members;
 }
 
-const discordMembers = await fetchMemberCount(`http://localhost:3000/discord/members/${GUILD_ID}`);
-const teamMembers = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${TEAM_ROLE_ID}`);
-const teamTrialMembers = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${TEAM_TRIAL_ROLE_ID}`);
-const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${GUILD_ID}/${STUDENT_ROLE_ID}`);
+const discordMembers = await fetchMemberCount(`http://localhost:${port}/discord/members/${GUILD_ID}`);
+const teamMembers = await fetchMemberCount(`http://localhost:${port}/discord/roles/${GUILD_ID}/${TEAM_ROLE_ID}`);
+const teamTrialMembers = await fetchMemberCount(`http://localhost:${port}/discord/roles/${GUILD_ID}/${TEAM_TRIAL_ROLE_ID}`);
+const students = await fetchMemberCount(`http://localhost:${port}/discord/roles/${GUILD_ID}/${STUDENT_ROLE_ID}`);
 ---
 
 <Layout metadata={metadata}>
@@ -39,14 +44,12 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
       alt: 'Caos Image',
     }}
   >
-    <Fragment slot="title">
-      Fujiwara Tofu shop
-    </Fragment>
+    <Fragment slot="title"> Fujiwara Tofu shop </Fragment>
 
     <Fragment slot="subtitle">
-      Fujiwara Tofu Shop is a team inspired by Bunta's mission to deliver tofu faster and more efficiently 
-      than any competitor, prioritizing precision, discipline, and control on the toughest touge, honing 
-      drifting and gripping skills to dominate mountain passes with speed, control, and consistency.
+      Fujiwara Tofu Shop is a team inspired by Bunta's mission to deliver tofu faster and more efficiently than any
+      competitor, prioritizing precision, discipline, and control on the toughest touge, honing drifting and gripping
+      skills to dominate mountain passes with speed, control, and consistency.
     </Fragment>
   </Hero>
 
@@ -56,7 +59,7 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
     title="Statistics"
     stats={[
       { title: 'Discord Members', amount: discordMembers || '200' },
-      { title: 'Team Members', amount: (Number(teamMembers) + Number(teamTrialMembers)) || '20' },
+      { title: 'Team Members', amount: Number(teamMembers) + Number(teamTrialMembers) || '20' },
       { title: 'Students', amount: students || '10' },
     ]}
   />
@@ -71,7 +74,8 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
     items={[
       {
         title: 'Perfect Drift Control',
-        description: 'Execute precise drifts through tight corners with ease. Precision is the key to mastering the touge.',
+        description:
+          'Execute precise drifts through tight corners with ease. Precision is the key to mastering the touge.',
         icon: 'tabler:car',
       },
       {
@@ -93,7 +97,8 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
         title: 'Open to New Challenges',
         description: 'Like fearless racers, we welcome new ideas to stay at the top of our game.',
         icon: 'tabler:vs',
-      },{
+      },
+      {
         title: 'Learn and Share Skills',
         description: 'Teach and train team members with ease using our intuitive tools and resources.',
         icon: 'tabler:chalkboard',
@@ -114,7 +119,7 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
         icon: 'tabler:chart-line',
       },
     ]}
-/>
+  />
 
   <!-- Steps2 Widget ****************** -->
 
@@ -140,7 +145,6 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
     ]}
   />
 
-
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -150,14 +154,12 @@ const students = await fetchMemberCount(`http://localhost:3000/discord/roles/${G
     items={[
       {
         title: 'Create a ticket',
-        description:
-          'Simply create a ticket on our discord-server for any help or questions.',
+        description: 'Simply create a ticket on our discord-server for any help or questions.',
         icon: 'tabler:messages',
       },
       {
         title: 'Send us an email',
-        description:
-          'send us an email to: contact@fujiwaratofu.shop',
+        description: 'send us an email to: contact@fujiwaratofu.shop',
         icon: 'tabler:mail',
       },
     ]}
